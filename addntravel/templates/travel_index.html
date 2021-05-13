@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block page_content %}
+<div class="col-md-8 offset-md-2">
+    <h1>Travel Index</h1>
+    <a href="add/">Add new</a>
+    <hr>
+    {% for travel in travels %}
+    <h2>{{ travel.destination }}></h2>
+    <small>
+        {{ travel.created_on.date }} |&nbsp;
+    </small>
+    <p>{{ travel.description | slice:":400" }}...</p>
+    {% endfor %}
+</div>
+{% endblock %}
